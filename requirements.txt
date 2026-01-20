@@ -1,0 +1,18 @@
+# Web Framework
+fastapi
+uvicorn[standard]
+
+# Database
+SQLAlchemy
+pydantic-settings
+python-dotenv
+
+# Authentication (JWTで今後使用)
+python-multipart
+email-validator
+passlib[bcrypt]
+python-jose[cryptography]
+
+# Testing
+pytest
+httpx

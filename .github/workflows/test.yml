@@ -10,9 +10,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    services:
-      # SQLiteを使用するため、特別なサービス起動は不要
-
     steps:
       - uses: actions/checkout@v4
 

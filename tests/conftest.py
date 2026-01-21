@@ -37,3 +37,17 @@ def client(db):
             pass
     app.dependency_overrides[get_db] = override_get_db
     return TestClient(app)
+
+@pytest.fixture
+def auth_headers(client):
+    email = "test_user@example.com"
+    password = "testpassword"
+
+    # 1. ユーザー作成（既に存在してもエラーにならないよう配慮）
+    client.post("/signup", json={"email": email, "password": password})
+    
+    # 2. ログインしてトークン取得
+    response = client.post("/token", data={"username": email, "password": password})
+    token = response.json()["access_token"]
+    
+    return {"Authorization": f"Bearer {token}"}

@@ -44,7 +44,7 @@ def test_delete_todo(client, auth_headers):
     get_res = client.get("/todos")
     assert len(get_res.json()) == 0
 
-def test_delete_todo_not_found(client, headers=auth_headers):
+def test_delete_todo_not_found(client, auth_headers):
     # 実行：存在しないID（例：999）を削除しようとする
     response = client.delete("/todos/999", headers=auth_headers)
 

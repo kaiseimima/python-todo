@@ -12,6 +12,7 @@ python-multipart
 email-validator
 passlib[bcrypt]
 python-jose[cryptography]
+bcrypt==4.0.1
 
 # Testing
 pytest
